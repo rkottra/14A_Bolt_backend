@@ -24,7 +24,8 @@ class UpdateTermekRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            "nev" => "required|string|min:3|max:100",
+            "ar" => "required|min:0",
         ];
     }
 }

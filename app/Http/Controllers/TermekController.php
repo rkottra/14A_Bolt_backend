@@ -32,6 +32,7 @@ class TermekController extends Controller
         $seged->ar          = $request->ar;
         $seged->kedvezmeny  = $request->kedvezmeny;
         $seged->save();
+        return $seged;
     }
 
     /**
@@ -59,6 +60,7 @@ class TermekController extends Controller
         $termek->ar          = $request->ar;
         $termek->kedvezmeny  = $request->kedvezmeny;
         $termek->save();
+        return $termek;
     }
 
     /**
@@ -69,6 +71,6 @@ class TermekController extends Controller
      */
     public function destroy(Termek $termek)
     {
-        $termek->delete();
+        return $termek->delete();
     }
 }

@@ -24,15 +24,15 @@ class StoreTermekRequest extends FormRequest
     public function rules()
     {
         return [
-            "nev" => "require|string|min:3|max:100",
-            "ar" => "require|min:0",
+            "nev" => "required|string|min:3|max:100",
+            "ar" => "required|min:0",
         ];
     }
 
     public function messages()
     {
         return [
-            "nev.require" => "A név mező kötelező",
+            "nev.required" => "A név mező kötelező",
         ];
     }
 }

@@ -19,6 +19,7 @@ class TermekFactory extends Factory
         return [
             "nev"=> fake()->sentence,
             "leiras"=> fake()->text,
+            "kepUrl"=> fake()->imageUrl(640, 480, 'animals', true),
             "ar" => rand(100,1000),
             "kedvezmeny" => rand(0,100)>90?0.2:0,
         ];
