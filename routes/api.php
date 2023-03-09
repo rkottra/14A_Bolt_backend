@@ -24,7 +24,10 @@ Route::resource("termek", TermekController::class)->except("create", "edit");
 
 use App\Http\Controllers\LoginController;
 Route::post("register", [LoginController::class, 'Registration']);
-Route::get("login", [LoginController::class, 'Login']);
+Route::post("login", [LoginController::class, 'Login']);
+Route::middleware('auth:sanctum')
+    ->post("logout", [LoginController::class, 'Logout']);
 
 
-Route::middleware('auth:sanctum')->get("vedett", [LoginController::class, 'VedettAdatok']);
+Route::middleware('auth:sanctum')
+    ->get("vedett", [LoginController::class, 'VedettAdatok']);

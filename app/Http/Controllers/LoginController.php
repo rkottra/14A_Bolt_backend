@@ -46,6 +46,10 @@ class LoginController extends Controller
         return response("Hibás felhasználónév vagy jelszó!", 500);
     }
 
+    function Logout(Request $request) {
+        return $request->user()->currentAccessToken()->delete();
+    }
+
     function VedettAdatok() {
         return "Szigorúan titkos";
     }
