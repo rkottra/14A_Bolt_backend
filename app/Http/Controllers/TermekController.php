@@ -8,6 +8,11 @@ use App\Http\Requests\UpdateTermekRequest;
 
 class TermekController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum')->except('index', 'show');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -58,6 +63,7 @@ class TermekController extends Controller
         $termek->nev         = $request->nev;
         $termek->leiras      = $request->leiras;
         $termek->ar          = $request->ar;
+        $termek->kepUrl      = $request->kepUrl;
         $termek->kedvezmeny  = $request->kedvezmeny;
         $termek->save();
         return $termek;
